@@ -1,4 +1,4 @@
-# tell don't ask kata
+# Tell Don't Ask Kata
 A legacy refactor kata, focused on the violation of the [tell don't ask](https://pragprog.com/articles/tell-dont-ask) principle and the [anemic domain model](https://martinfowler.com/bliki/AnemicDomainModel.html).
 
 ## Instructions
