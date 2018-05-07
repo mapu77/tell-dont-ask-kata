@@ -1,3 +1,5 @@
+This is a fork of the original Tell Don't Ask Kata of [@gabrieletondi](https://github.com/gabrieletondi/tell-dont-ask-kata). I've only added Python3 and Typescript versions. Probably I will pull request after a time.
+
 # Tell Don't Ask Kata
 A legacy refactor kata, focused on the violation of the [tell don't ask](https://pragprog.com/articles/tell-dont-ask) principle and the [anemic domain model](https://martinfowler.com/bliki/AnemicDomainModel.html).
 
@@ -17,12 +19,6 @@ But don't stop there.
 
 If you can remove some test cases because they don't make sense anymore (eg: you cannot compile the code to do the wrong thing) feel free to do it!
 
-## Contribute
-If you would like to contribute to this kata adding new cases or smells: please open a pull request!
-
-## Feedback
-Feedback is welcome!
-
-How did you find the kata? Did you learn anything from it?
-
-Please contact me on twitter [@racingDeveloper](https://twitter.com/racingDeveloper) or use the GitHub repo wiki!
+## Known problems
+### Typescript
+- Due to the BigDecimal Library precision and rounding methods, I had to change test spec.
