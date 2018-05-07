@@ -21,15 +21,16 @@ If you can remove some test cases because they don't make sense anymore (eg: you
 
 ## Starting
 1. Clone the repository
-
-`> $> git clone https://github.com/mapu77/tell-dont-ask-kata.git`
-
+> `$> git clone https://github.com/mapu77/tell-dont-ask-kata.git`
 2. Open the language project in your favourite IDE
 3. Open a terminal
- 3.1. Java: ` $> mvn test`
- 3.2. Python3: ` $> python -m unittest`
- 3.3. Typescript: ` $> npm test`
+
+     3.1. Java: ` $> mvn test`
+     
+     3.2. Python3: ` $> python -m unittest`
+     
+     3.3. Typescript: ` $> npm test`
 
 ## Known problems
 ### Typescript
-- Due to the Javascript BigDecimal library precision and rounding methods, I had to change test spec.
+- Due to the [Javascript BigDecimal library](https://github.com/royNiladri/js-big-decimal) precision and rounding methods, I had to change test spec.
