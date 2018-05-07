@@ -25,11 +25,21 @@ If you can remove some test cases because they don't make sense anymore (eg: you
 2. Open the language project in your favourite IDE
 3. Open a terminal
 
-     3.1. Java: ` $> mvn test`
+     3.1. Java: 
      
-     3.2. Python3: ` $> python -m unittest`
+     ` $> mvn test`
      
-     3.3. Typescript: ` $> npm test`
+     3.2. Python3: 
+     
+     ` $> pip install -r requirements.txt`
+     
+     ` $> python -m unittest`
+     
+     3.3. Typescript: 
+     
+     ` $> npm install`
+     
+     ` $> npm test`
 
 ## Known problems
 ### Typescript
