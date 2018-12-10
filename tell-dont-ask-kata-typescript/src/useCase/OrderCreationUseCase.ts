@@ -2,10 +2,10 @@ import OrderRepository from "../repository/OrderRepository";
 import ProductCatalog from "../repository/ProductCatalog";
 import SellItemsRequest from "./SellItemsRequest";
 import Order from "../domain/Order";
-import UnknownProductException from "./UnknownProductException";
 import OrderItem from "../domain/OrderItem";
 import OrderStatus from "../domain/OrderStatus";
 import bigDecimal from "js-big-decimal";
+import UnknownProductException from "./UnknownProductException";
 
 export default class OrderCreationUseCase {
     private readonly _orderRepository: OrderRepository;
@@ -30,7 +30,7 @@ export default class OrderCreationUseCase {
             if (product === undefined) {
                 throw new UnknownProductException()
             } else {
-                const unitaryTax = product.price.divide(new bigDecimal(100)).multiply(product.category.taxPercentage).round(2);
+                const unitaryTax = product.price.divide(new bigDecimal(100), 3).multiply(product.category.taxPercentage).round(2);
                 const unitaryTaxedAmount = product.price.add(unitaryTax).round(2);
                 const taxedAmount = unitaryTaxedAmount.multiply(new bigDecimal(itemRequest.quantity)).round(2);
                 const taxAmount = unitaryTax.multiply(new bigDecimal(itemRequest.quantity));

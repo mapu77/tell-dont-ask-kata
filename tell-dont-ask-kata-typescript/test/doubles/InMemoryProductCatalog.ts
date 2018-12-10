@@ -8,7 +8,7 @@ export default class InMemoryProductCatalog implements ProductCatalog {
         this._products = products;
     }
 
-    getByName(name: string): Product {
+    getByName(name: string): Product | undefined {
         return this._products.find(p => p.name === name);
     }
 

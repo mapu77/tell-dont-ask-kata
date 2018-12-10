@@ -1,4 +1,1 @@
-export default class ShippedOrdersCannotBeChangedException implements Error {
-    message: string;
-    name: string;
-}
+export default class ShippedOrdersCannotBeChangedException extends Error {}
