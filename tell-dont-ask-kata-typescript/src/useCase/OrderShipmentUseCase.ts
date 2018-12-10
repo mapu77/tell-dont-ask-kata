@@ -4,6 +4,7 @@ import OrderShipmentRequest from "./OrderShipmentRequest";
 import OrderCannotBeShippedException from "./OrderCannotBeShippedException";
 import OrderCannotBeShippedTwiceException from "./OrderCannotBeShippedTwiceException";
 import OrderStatus from "../domain/OrderStatus";
+import OrderNotDefined from "./OrderNotDefined";
 
 export default class OrderShipmentUseCase {
     private readonly _orderRepository: OrderRepository;
@@ -16,6 +17,9 @@ export default class OrderShipmentUseCase {
 
     public run(request: OrderShipmentRequest): void {
         const order = this._orderRepository.getById(request.orderId);
+
+        if (order === undefined)
+            throw new OrderNotDefined();
 
         if (order.status === OrderStatus.CREATED || order.status === OrderStatus.REJECTED) {
             throw new OrderCannotBeShippedException();

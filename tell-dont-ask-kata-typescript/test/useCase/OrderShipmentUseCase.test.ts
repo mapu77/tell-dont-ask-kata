@@ -1,18 +1,16 @@
 import Order from "../../src/domain/Order";
 import OrderShipmentRequest from "../../src/useCase/OrderShipmentRequest";
-import TestOrderRepository from "../doubles/TestOrderRepository";
 import OrderShipmentUseCase from "../../src/useCase/OrderShipmentUseCase";
 import OrderCannotBeShippedException from "../../src/useCase/OrderCannotBeShippedException";
 import OrderCannotBeShippedTwiceException from "../../src/useCase/OrderCannotBeShippedTwiceException";
 import OrderStatus from "../../src/domain/OrderStatus";
-import ShipmentService from "../../src/service/ShipmentService";
-import OrderRepository from "../../src/repository/OrderRepository";
+import TestOrderRepository from "../doubles/TestOrderRepository";
 import TestShipmentService from "../doubles/TestShipmentService";
 
 describe('OrderShipmentUseCase should', () => {
-    const orderRepository: OrderRepository;
-    const shipmentService: ShipmentService;
-    const useCase: OrderShipmentUseCase;
+    let orderRepository: TestOrderRepository;
+    let shipmentService: TestShipmentService;
+    let useCase: OrderShipmentUseCase;
 
     beforeEach(() => {
         orderRepository = new TestOrderRepository();
@@ -31,8 +29,12 @@ describe('OrderShipmentUseCase should', () => {
 
         useCase.run(request);
 
-        expect(orderRepository.getSavedOrder().status).toBe(OrderStatus.SHIPPED);
-        expect(shipmentService.getShippedOrder()).toBe(initialOrder);
+        let savedOrder = orderRepository.getSavedOrder() ;
+        expect(savedOrder).toBeDefined();
+        if(savedOrder !== undefined) {
+            expect(savedOrder.status).toBe(OrderStatus.SHIPPED);
+            expect(shipmentService.getShippedOrder()).toBe(initialOrder);
+        }
     });
 
     test('not ship created orders', () => {

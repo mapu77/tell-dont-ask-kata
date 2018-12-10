@@ -48,6 +48,13 @@ describe('OrderCreationUseCase should', () => {
         useCase.run(request);
 
         const insertedOrder = orderRepository.getSavedOrder();
+
+        expect(insertedOrder).toBeDefined();
+
+        if(insertedOrder === undefined) {
+            return ;
+        }
+
         expect(insertedOrder.status).toBe(OrderStatus.CREATED);
         expect(insertedOrder.total).toEqual(new bigDecimal("23.17"));
         expect(insertedOrder.tax).toEqual(new bigDecimal("2.10"));

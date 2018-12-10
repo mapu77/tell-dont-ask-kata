@@ -1,5 +1,5 @@
 export default class OrderShipmentRequest {
-    private _orderId: number;
+    private _orderId: number = 0;
 
     constructor() {}
 

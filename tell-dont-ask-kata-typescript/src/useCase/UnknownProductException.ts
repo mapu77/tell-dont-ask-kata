@@ -1,4 +1,1 @@
-export default class UnknownProductException implements Error {
-    message: string;
-    name: string;
-}
+export default class UnknownProductException extends Error {}

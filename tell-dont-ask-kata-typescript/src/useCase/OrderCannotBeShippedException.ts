@@ -1,5 +1,1 @@
-export default class OrderCannotBeShippedException implements Error{
-    message: string;
-    name: string;
-
-}
+export default class OrderCannotBeShippedException extends Error {}

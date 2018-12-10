@@ -1,5 +1,5 @@
 import Product from "../domain/Product";
 
 export default interface ProductCatalog {
-    getByName(name: string): Product;
+    getByName(name: string): Product | undefined;
 }

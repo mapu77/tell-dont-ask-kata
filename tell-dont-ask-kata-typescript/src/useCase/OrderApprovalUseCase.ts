@@ -4,6 +4,7 @@ import ApprovedOrderCannotBeRejectedException from "./ApprovedOrderCannotBeRejec
 import ShippedOrdersCannotBeChangedException from "./ShippedOrdersCannotBeChangedException";
 import RejectedOrderCannotBeApprovedException from "./RejectedOrderCannotBeApprovedException";
 import OrderStatus from "../domain/OrderStatus";
+import OrderNotDefined from "./OrderNotDefined";
 
 export default class OrderApprovalUseCase {
     private readonly _orderRepository: OrderRepository;
@@ -14,6 +15,11 @@ export default class OrderApprovalUseCase {
 
     public run(request: OrderApprovalRequest): void {
         const order = this._orderRepository.getById(request.orderId);
+
+        if (order === undefined) {
+            throw new OrderNotDefined()
+        }
+
         if (order.status === OrderStatus.SHIPPED) {
             throw new ShippedOrdersCannotBeChangedException();
         }
