@@ -1,8 +1,8 @@
 import OrderRepository from "../repository/OrderRepository";
 import OrderApprovalRequest from "./OrderApprovalRequest";
-import ApprovedOrderCannotBeRejectedException from "./ApprovedOrderCannotBeRejectedException";
-import ShippedOrdersCannotBeChangedException from "./ShippedOrdersCannotBeChangedException";
-import RejectedOrderCannotBeApprovedException from "./RejectedOrderCannotBeApprovedException";
+import ApprovedOrderCannotBeRejectedException from "./exceptions/ApprovedOrderCannotBeRejectedException";
+import ShippedOrdersCannotBeChangedException from "./exceptions/ShippedOrdersCannotBeChangedException";
+import RejectedOrderCannotBeApprovedException from "./exceptions/RejectedOrderCannotBeApprovedException";
 import OrderStatus from "../domain/OrderStatus";
 import OrderNotDefined from "./OrderNotDefined";
 

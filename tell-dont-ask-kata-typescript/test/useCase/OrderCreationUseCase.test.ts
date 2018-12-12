@@ -5,7 +5,7 @@ import Product from "../../src/domain/Product";
 import OrderCreationUseCase from "../../src/useCase/OrderCreationUseCase";
 import SellItemRequest from "../../src/useCase/SellItemRequest";
 import SellItemsRequest from "../../src/useCase/SellItemsRequest";
-import UnknownProductException from "../../src/useCase/UnknownProductException";
+import UnknownProductException from "../../src/useCase/exceptions/UnknownProductException";
 import OrderStatus from "../../src/domain/OrderStatus";
 import bigDecimal from "js-big-decimal";
 

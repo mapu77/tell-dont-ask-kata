@@ -1,8 +1,8 @@
 import OrderRepository from "../repository/OrderRepository";
 import ShipmentService from "../service/ShipmentService";
 import OrderShipmentRequest from "./OrderShipmentRequest";
-import OrderCannotBeShippedException from "./OrderCannotBeShippedException";
-import OrderCannotBeShippedTwiceException from "./OrderCannotBeShippedTwiceException";
+import OrderCannotBeShippedException from "./exceptions/OrderCannotBeShippedException";
+import OrderCannotBeShippedTwiceException from "./exceptions/OrderCannotBeShippedTwiceException";
 import OrderStatus from "../domain/OrderStatus";
 import OrderNotDefined from "./OrderNotDefined";
 

@@ -5,7 +5,7 @@ import Order from "../domain/Order";
 import OrderItem from "../domain/OrderItem";
 import OrderStatus from "../domain/OrderStatus";
 import bigDecimal from "js-big-decimal";
-import UnknownProductException from "./UnknownProductException";
+import UnknownProductException from "./exceptions/UnknownProductException";
 
 export default class OrderCreationUseCase {
     private readonly _orderRepository: OrderRepository;
