@@ -1,5 +1,1 @@
-export default class ApprovedOrderCannotBeRejectedException implements Error {
-    message: string;
-    name: string;
-
-}
+export default class ApprovedOrderCannotBeRejectedException extends Error {}
